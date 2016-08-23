@@ -22,6 +22,9 @@
     document.querySelectorAll('a.message').forEach(function (e) {
       itemsToCheck.push(e);
     });
+    document.querySelectorAll('p.commit-title').forEach(function (e) {
+      itemsToCheck.push(e);
+    });
     itemsToCheck.forEach(function (e) {
       if (jiraRegex.test(e.innerHTML)) {
         e.innerHTML = e.innerHTML.replace(jiraRegex, '<a href="https://domain.atlassian.net/browse/$1">$1</a>');
